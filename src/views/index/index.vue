@@ -1,10 +1,14 @@
 <template>
     <el-container>
-        <el-header>
+        <el-header style="height:197px">
             <m-header></m-header>
         </el-header>
-        <el-main>Main</el-main>
-        <el-footer>Footer</el-footer>
+        <el-main>
+            1233
+        </el-main>
+        <el-footer>
+            
+        </el-footer>
     </el-container>
 </template>
 
