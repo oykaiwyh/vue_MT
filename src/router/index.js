@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import test from '../components/test.vue'
 import Index from '../views/index/index.vue'
+import Login from '../views/register/index'
 
 Vue.use(Router)
 
@@ -16,8 +16,8 @@ const router =  new Router({
         component : Index
     },
     {
-        path : '/aaa',
-        // component : test 
+        path : '/register',
+        component : Login 
     }]
 })
 

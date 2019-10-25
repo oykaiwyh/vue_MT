@@ -2,11 +2,13 @@
     <el-container>
         <el-header style="height:197px">
             <m-header></m-header>
+            <eindex/>
+
         </el-header>
         <el-main>
-            1233
+
         </el-main>
-        <el-footer>
+        <el-footer style="">
             
         </el-footer>
     </el-container>
@@ -14,9 +16,11 @@
 
 <script>
     import MHeader  from '../../components/public/header/index.vue'
+    import Eindex  from '../../components/index/index.vue'
     export default {
         components:{
-            MHeader
+            MHeader,
+            Eindex
         }
         
     }

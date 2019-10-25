@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!-- <public/> -->
      <router-view></router-view>
     <!-- <el-button type="primary">主要按钮</el-button>
     <button class="bt bt--primary"><span>13</span></button> -->
@@ -8,12 +9,12 @@
 
 <script>
 // import HelloWorld from './components/HelloWorld'
-// import Test from './components/test'
+import Public from './components/public/header/index'
 
 export default {
   name: 'App',
   components: {
-    // HelloWorld,
+    // Public,
     // Test
   }
 }

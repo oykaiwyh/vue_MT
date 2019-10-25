@@ -80,11 +80,7 @@
                 },200)
             },
             input(){
-            //    this.isFocus = false 
-                let _this =this
-                setTimeout(()=>{
-                    _this.isFocus = false
-                },200)
+                console.log('123')   
             }
         }
     }
