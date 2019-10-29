@@ -1,13 +1,16 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "server",
+  "description": "",
   "private": true,
   "egg": {
     "declarations": true
   },
   "dependencies": {
     "egg": "^2.15.1",
+    "egg-email": "^1.0.2",
+    "egg-mongoose": "^3.2.0",
+    "egg-redis": "^2.4.0",
     "egg-scripts": "^2.11.0"
   },
   "devDependencies": {
@@ -41,6 +44,6 @@
     "type": "git",
     "url": ""
   },
-  "author": "yang",
+  "author": "",
   "license": "MIT"
 }

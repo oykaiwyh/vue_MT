@@ -5,5 +5,11 @@
  */
 module.exports = app => {
   const { router, controller } = app;
-  router.get('/', controller.home.index);
+  // const fs=require('fs')
+  // router.get('/', () => {
+  //   app.ctx.body = fs.createReadStream('app/public')
+  //  })
+  // router.get('/', controller.home.index);
+  router.get('/gettest', controller.home.gettest);
+  router.get('/get', controller.user.user.test);
 };
