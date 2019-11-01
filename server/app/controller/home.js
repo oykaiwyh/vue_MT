@@ -15,7 +15,7 @@ class HomeController extends Controller {
 
     console.log('test',test)
 
-    ctx.response.body='dada'
+    ctx.response.body='dada111222'
 
     // ctx.body =JSON.stringify(test) 
   }

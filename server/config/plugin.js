@@ -13,5 +13,13 @@ module.exports = {
   redis:{
     enable:true,
     package: "egg-redis"
+  },
+  passport:{
+    enable:true,
+    package: "egg-passport"
+  },
+  passportLocal:{
+    enable:true,
+    package: "egg-passport-local"
   }
 };
