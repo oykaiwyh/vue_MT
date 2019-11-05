@@ -10,5 +10,5 @@ module.exports = app => {
         
     });
 
-    return mongoose.model('User', UserSchema); //返回model，其中Test为数据库中表的名称
+    return mongoose.model('Usertest', UserSchema); //返回model，其中Test为数据库中表的名称
 }

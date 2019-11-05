@@ -7,7 +7,7 @@ class UserController extends Controller {
 
         let test = await ctx.service.user.user.test()
     
-        console.log('test1',test)
+        console.log('testcontroll',test)
     
         ctx.response.body='dada'
     }

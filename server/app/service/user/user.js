@@ -7,17 +7,9 @@ class UserService extends Service {
     console.log('131441424')
     const { ctx } =this;
     console.log('ctx',ctx.model)
-    // await ctx.model.Test.Test.create({name:'张三'},(err,data)=>{
-    //     if(err){
-    //         // ctx.response.data={data}
-    //         console.log('err',err)
-    //         return err
-    //     }
-    //     else{
-    //       console.log('testdata1313',data)
-    //       return data
-    //     }
-    // })
+    let aa= await ctx.model.User.create({username:'张三22233'})
+    console.log('aa',aa)
+    return aa
   }
 }
 

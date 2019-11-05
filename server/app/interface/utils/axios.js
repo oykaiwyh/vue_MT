@@ -1,5 +1,4 @@
 import Axios from 'axios'
-import { timeout } from 'q'
 
 
 
