@@ -1,4 +1,7 @@
 module.exports = app =>{
     const { router , controller } = app
-    router.get('/signin',controller.user.user.test)
+    router.post('/user/signup',controller.user.user.signup)
+    router.post('/user/signin',controller.user.user.signin)
+    router.post('/user/verify',controller.user.user.verify)
+    
 }

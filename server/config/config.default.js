@@ -30,8 +30,6 @@ module.exports = appInfo => {
       return new Date().getTime() + 1*60*1000;
     }
 
-
-
   };
   //使用mongoose配置mongodb连接
   config.mongoose={
@@ -62,6 +60,14 @@ module.exports = appInfo => {
         pass : 'mkfstpenwaibfbfe'
       }
     }
+  }
+  config.http ={
+    header:{
+      common:{
+        'Content-Type':'application/json;charset=UTF-8'
+      }
+    },
+    timeout:10000
   }
 
   return {

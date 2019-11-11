@@ -21,5 +21,9 @@ module.exports = {
   passportLocal:{
     enable:true,
     package: "egg-passport-local"
+  },
+  http:{
+    enable:true,
+    package:"egg-axios"
   }
 };

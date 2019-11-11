@@ -11,6 +11,16 @@ class UserService extends Service {
     console.log('aa',aa)
     return aa
   }
+  async findUsername(username){
+    const { ctx } = this;
+    let user = await ctx.model.User.find({username})
+    return user
+  }
+  async signup(username , password , email){
+    const { ctx } = this;
+    let newuser = await ctx.model.User.create({username , password , email})
+    return newuser
+  }
 }
 
 module.exports = UserService;
