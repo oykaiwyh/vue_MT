@@ -99,7 +99,7 @@ class UserController extends Controller {
     }
     //验证码
     async verify(){
-        const { ctx } = this
+        const { ctx , app ,config} = this
         let usernamne = ctx.request.body.username;
         const saveExpire = await this.app.redis.hget(`nodemail:${usernamne}`,'expire')
         if(saveExpire&& new Date().getTime()-saveExpire<0){
@@ -109,7 +109,63 @@ class UserController extends Controller {
             }
             // return false
         }
+        let message = {
+            code : config.code,
+            expire : config.expire,
+            email : ctx.request.body.email,
+            user : ctx.request.body.username
+        }
+        const mailOptions = {
+            from: `"认证邮件"<${config.adminemail}>`,
+            to: message.email,
+            subject: 'MT_注册码',   //主题
+            html: `您在MT_Project的注册码为:${message.code}`
+        };
+        await app.email.sendMail(mailOptions,(err , res)=>{
+            if (err) {
+                return console.log('send email_err',err)
+            } else {
+                app.redis.hmset(`nodemail:${message.user}`,'code',message.code,'expire',message.expire,'email',message.email)
+            }
+            app.email.close();
+        })
+        ctx.body={
+            code : 0,
+            msg : '验证码已发送，可能会有延迟'
+        }
     }
+    //退出
+    async exit(){
+        const { ctx } = this
+        await ctx.logout();
+        if(!ctx.isAuthenticated()){
+            ctx.body ={
+                code : 0
+            }
+        }else{
+            ctx.body = {
+                code : -1
+            }
+        }
+
+    }
+    //获取用户名
+    async getusername(){
+        const { ctx } = this;
+        if(ctx.isAuthenticated()){
+            const {username , email} = ctx.session.passport.user;
+            ctx.body={
+                user:username,
+                email
+            }
+        }else{
+            ctx.body={
+                user: '',
+                email : ''
+            }
+        }
+    }
+
     
 }
 

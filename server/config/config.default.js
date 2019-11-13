@@ -22,6 +22,7 @@ module.exports = appInfo => {
   const userConfig = {
     // myAppName: 'egg',
     //配置四位随机验证码的生成code
+    adminemail:'1641250803@qq.com',
     code:function(){
       return Math.random().toString(16).splice(2,4)   
     },

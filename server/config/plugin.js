@@ -6,6 +6,10 @@ module.exports = {
   // static: {
   //   enable: true,
   // }
+  email : {
+    enable: true,
+    package: 'egg-email',
+  },
   mongoose:{
     enable:true,
     package:'egg-mongoose'
