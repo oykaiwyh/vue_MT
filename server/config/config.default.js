@@ -50,6 +50,13 @@ module.exports = appInfo => {
       db: 0,
     },
   }
+  config.cluster = {
+    listen: {
+      path: '',
+      port: 7090,
+      hostname: '192.168.10.160',
+    }
+};
   //配置eamil
   config.eamil = {
     client :{
