@@ -50,13 +50,23 @@ module.exports = appInfo => {
       db: 0,
     },
   }
-  config.cluster = {
-    listen: {
-      path: '',
-      port: 7090,
-      hostname: '192.168.10.160',
-    }
-};
+  //配置session配置
+  exports.session = {
+    key: 'mt',
+    maxAge: 24 * 3600 * 1000, //cookie的有效期 1 天
+    prefix:'mt:uid',  //存储前缀
+    httpOnly: true,  //通过程序(JS脚本、Applet等)将无法读取到Cookie信息，这样能有效的防止XSS攻击。
+    encrypt: true,  //加密
+    renew: true  //每次访问页面都会给session会话延长时间
+  };
+
+//   config.cluster = {
+//     listen: {
+//       path: '',
+//       port: 7090,
+//       hostname: '192.168.10.160',
+//     }
+// };
   //配置eamil
   config.eamil = {
     client :{
@@ -69,6 +79,7 @@ module.exports = appInfo => {
       }
     }
   }
+  //配置axios的http请求
   config.http ={
     header:{
       common:{
